@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using DearlerPlatform.Api.Filters;
 using DearlerPlatform.Domain;
 using DearlerPlatform.Service.ShoppingCartApp;
@@ -41,9 +42,11 @@ public class ShoppingCartController : BaseController
     }
 
     [HttpPost("CartSelected")]
-    public bool UpdateCartSelected(ShoppingCartSelectedEditDTO edit)
+    [CustomerAuthorizationFilter]
+    public async Task<bool> UpdateCartSelected(List<ShoppingCartSelectedEditDTO> edit)
     {
-        return _shoppingCartService.UpdateCartSelected(edit);
+        var customerNo = HttpContext.Items["CustomerNo"]?.ToString();
+        return await _shoppingCartService.UpdateCartSelected(edit, customerNo);
     }
 
     [HttpGet("num")]

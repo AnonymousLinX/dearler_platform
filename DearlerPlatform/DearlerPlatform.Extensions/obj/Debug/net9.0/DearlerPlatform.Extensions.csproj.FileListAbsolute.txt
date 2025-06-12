@@ -15,3 +15,4 @@ C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensi
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Core.pdb
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Domain.pdb
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerP.CBA3366F.Up2Date
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.sourcelink.json

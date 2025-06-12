@@ -5,9 +5,8 @@
         <div class="user-head">
           <img src="/img/dealerImgs/picUser.png" alt="" class="" />
         </div>
-        <p class="user-name">安徽安庆王跃争</p>
-        <p>销售员：菜菜</p>
-        <p>单位地址：安庆市光彩大市场四期C区</p>
+        <p class="user-name">Lin</p>
+        <p>销售员：员工A</p>
       </div>
     </div>
     <div class="menu-item">

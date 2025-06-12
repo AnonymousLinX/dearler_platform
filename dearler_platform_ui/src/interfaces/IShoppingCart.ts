@@ -7,7 +7,7 @@ export interface IshoppingCartInfo{
     // totalPrice: number;
     typeSelected: boolean;
     onAddNum: (cart: ShoppingCartDTO) => void;
-    onSubnum: (cart: ShoppingCartDTO) => void;
+    onSubNum: (cart: ShoppingCartDTO) => void;
     onGetShoppingCarts: () => Promise<void>;
     onSelectCart: (cart: ShoppingCartDTO) => void;
     isTypeAllSelected: (type: types) => boolean;
@@ -28,4 +28,9 @@ export interface ShoppingCartDTO {
 interface types {
     typeNo: string;
     typeName: string;
+}
+export interface ShoppingCartSelectedEditDTO {
+    cartGuid: string;
+    cartSelected: boolean;
+    productNum: number;
 }

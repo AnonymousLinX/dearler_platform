@@ -20,7 +20,7 @@
               <p class="p-name">{{ cart.productDto?.productName }}</p>
               <p class="p-price">&yen;{{ cart.productDto.productSale.salePrice }}</p>
               <p class="p-num">
-                <span class="sub-num" @click="onSubnum(cart)">-</span>
+                <span class="sub-num" @click="onSubNum(cart)">-</span>
                 <input
                   type="text"
                   name=""
@@ -52,7 +52,11 @@
 
 <script lang="ts">
 import { getCart, updateCartSelect } from "@/HttpRequests/ShoppingCartRequest";
-import { IshoppingCartInfo, ShoppingCartDTO } from "@/interfaces/IShoppingCart";
+import {
+  IshoppingCartInfo,
+  ShoppingCartDTO,
+  ShoppingCartSelectedEditDTO,
+} from "@/interfaces/IShoppingCart";
 import { onMounted, reactive, toRefs, computed } from "vue";
 import ProductList from "./ProductList.vue";
 
@@ -62,13 +66,25 @@ export default {
       shoppingcarts: [],
       types: [],
       typeSelected: false,
-      onAddNum: (cart) => {
+      onAddNum: async (cart) => {
         cart.productNum++;
+        const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
+          cartGuid: cart.cartGuid,
+          cartSelected: cart.cartSelected,
+          productNum: cart.productNum,
+        };
+        await updateCartSelect([shoppingCartEdit]);
       },
-      onSubnum: (cart) => {
+      onSubNum: async (cart) => {
         if (cart.productNum > 1) {
           cart.productNum--;
         }
+        const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
+          cartGuid: cart.cartGuid,
+          cartSelected: cart.cartSelected,
+          productNum: cart.productNum,
+        };
+        await updateCartSelect([shoppingCartEdit]);
       },
       onGetShoppingCarts: async () => {
         var customerNo = localStorage["customerNo"];
@@ -77,7 +93,12 @@ export default {
         shoppingCartInfo.types = res.type;
       },
       onSelectCart: async (cart) => {
-        await updateCartSelect([cart.cartGuid], !cart.cartSelected);
+        const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
+          cartGuid: cart.cartGuid,
+          cartSelected: !cart.cartSelected,
+          productNum: cart.productNum,
+        };
+        await updateCartSelect([shoppingCartEdit]);
         cart.cartSelected = !cart.cartSelected;
       },
       isTypeAllSelected: (type) => {
@@ -93,8 +114,16 @@ export default {
         );
         const isAllSelected = SameTypeCarts.every((m) => m.cartSelected);
         const targetSelected = !isAllSelected;
-        const cartGuids = SameTypeCarts.map((m) => m.cartGuid);
-        await updateCartSelect(cartGuids, targetSelected);
+        const shoppingCartEdits: ShoppingCartSelectedEditDTO[] = [];
+        SameTypeCarts.forEach((p) => {
+          const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
+            cartGuid: p.cartGuid,
+            cartSelected: targetSelected,
+            productNum: p.productNum,
+          };
+          shoppingCartEdits.push(shoppingCartEdit);
+        });
+        await updateCartSelect(shoppingCartEdits);
         SameTypeCarts.forEach((m) => (m.cartSelected = targetSelected));
       },
       computedTotalPrice: computed(() => {
@@ -111,8 +140,16 @@ export default {
       },
       onSelectAllButton: async () => {
         const targetSelectState = !shoppingCartInfo.showSelectAllButton();
-        const cartGuids = shoppingCartInfo.shoppingcarts.map((m) => m.cartGuid);
-        await updateCartSelect(cartGuids, targetSelectState);
+        const shoppingCartEdits: ShoppingCartSelectedEditDTO[] = [];
+        shoppingCartInfo.shoppingcarts.forEach((p) => {
+          const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
+            cartGuid: p.cartGuid,
+            cartSelected: targetSelectState,
+            productNum: p.productNum,
+          };
+          shoppingCartEdits.push(shoppingCartEdit);
+        });
+        await updateCartSelect(shoppingCartEdits);
         shoppingCartInfo.shoppingcarts.forEach(
           (m) => (m.cartSelected = targetSelectState)
         );

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using AutoMapper;
 using DearlerPlatform.Common.EventBusHelper;
 using DearlerPlatform.Common.RedisModule;
@@ -65,19 +66,44 @@ public partial class ShoppingCartService : IShoppingCartService
         return dtos;
     }
 
-    public bool UpdateCartSelected(ShoppingCartSelectedEditDTO edit)
+    public async Task<bool> UpdateCartSelected(List<ShoppingCartSelectedEditDTO> edits, string customerNo)
     {
-        using (var context = new DealerPlatformContext())
+        /// <summary>
+        /// 交互数据库
+        /// </summary>
+        // using (var context = new DealerPlatformContext())
+        // {
+        //     foreach (var editProduct in edits)
+        //     {
+        //         var cart = context.ShoppingCarts.FirstOrDefault(m => m.CartGuid == editProduct.CartGuids);
+        //         if (cart == null) continue;
+        //         cart.CartSelected = editProduct.CartSelected;
+        //         cart.ProductNum = editProduct.ProductNum;
+        //         context.Entry(cart).Property(p => p.CartSelected).IsModified = true;
+        //         context.Entry(cart).Property(p => p.ProductNum).IsModified = true;
+        //     }
+        //     return context.SaveChanges() > 0;
+        // }
+        /// <summary>
+        /// 交互redis
+        /// </summary>
+
+        foreach (var editProduct in edits)
         {
-            var carts = context.ShoppingCarts.Where(m => edit.CartGuids.Contains(m.CartGuid)).ToList();
-            if (carts.Count != edit.CartGuids.Count) return false;
-            foreach (var cart in carts)
+            try
             {
-                cart.CartSelected = edit.CartSelected;
-                context.Entry(cart).Property(p => p.CartSelected).IsModified = true;
+                var cart = await _redisWorker.GetHashMemoryAsync<ShoppingCart>(new List<string> { $"ShoppingCart:{editProduct.CartGuid}:*" });
+                if (cart.Count == 0) continue;
+                cart[0].CartSelected = editProduct.CartSelected;
+                cart[0].ProductNum = editProduct.ProductNum;
+                await _redisWorker.SetHashMemoryAsync<ShoppingCart>($"ShoppingCart:{editProduct.CartGuid}:{customerNo}", cart[0]);
             }
-            return context.SaveChanges() > 0;
+            catch(Exception ex)
+            {
+                Console.WriteLine($"更新失败:{ex.Message}");
+            }
         }
+            return true;
     }
     public async Task<int> GetShoppingCartNum(string customerNo)
     {

@@ -9,3 +9,4 @@ C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\refint\DearlerPlatform.Domain.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.pdb
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\ref\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.sourcelink.json

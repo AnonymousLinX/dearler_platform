@@ -1,4 +1,5 @@
 import { IShoppingCartInputDto } from "@/interfaces/IProductList";
+import { ShoppingCartSelectedEditDTO } from "@/interfaces/IShoppingCart";
 import axios from "axios";
 
 export const addCart = async(data: IShoppingCartInputDto) => {
@@ -11,7 +12,7 @@ export const getCart = async() => {
     return res.data;
 }
 
-export const updateCartSelect = async(cartGuids: string[], cartSelected: boolean) =>{
-    var res = await axios.post("ShoppingCart/CartSelected", {cartGuids, cartSelected});
+export const updateCartSelect = async(SelectedEditList: ShoppingCartSelectedEditDTO[]) =>{
+    var res = await axios.post("ShoppingCart/CartSelected", SelectedEditList);
     return res.data;
 }

@@ -13,3 +13,4 @@ C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Common\
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Common\bin\Debug\net9.0\DearlerPlatform.Domain.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Common\bin\Debug\net9.0\DearlerPlatform.Domain.pdb
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Common\obj\Debug\net9.0\DearlerP.32F50BAB.Up2Date
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Common\obj\Debug\net9.0\DearlerPlatform.Common.sourcelink.json

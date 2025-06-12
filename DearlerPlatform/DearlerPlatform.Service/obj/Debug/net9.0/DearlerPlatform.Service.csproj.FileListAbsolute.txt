@@ -17,3 +17,4 @@ C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Service
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Service\obj\Debug\net9.0\ref\DearlerPlatform.Service.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Service\bin\Debug\net9.0\DearlerPlatform.Common.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Service\bin\Debug\net9.0\DearlerPlatform.Common.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Service\obj\Debug\net9.0\DearlerPlatform.Service.sourcelink.json

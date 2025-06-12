@@ -181,3 +181,4 @@ C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Api\obj
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Api\obj\Debug\net9.0\ref\DearlerPlatform.Api.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Api\bin\Debug\net9.0\Pipelines.Sockets.Unofficial.dll
 C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Api\bin\Debug\net9.0\StackExchange.Redis.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Api\obj\Debug\net9.0\DearlerPlatform.Api.sourcelink.json

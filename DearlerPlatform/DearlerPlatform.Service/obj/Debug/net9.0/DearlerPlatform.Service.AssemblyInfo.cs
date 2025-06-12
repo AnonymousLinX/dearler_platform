@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DearlerPlatform.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34d44209ac23f52b80258a53e1f96842accad593")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2feb076e25b22a790ebce0b47bc286f57d94cea1")]
 [assembly: System.Reflection.AssemblyProductAttribute("DearlerPlatform.Service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DearlerPlatform.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

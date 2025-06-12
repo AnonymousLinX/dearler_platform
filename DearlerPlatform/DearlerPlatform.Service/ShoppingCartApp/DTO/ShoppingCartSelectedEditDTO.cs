@@ -2,6 +2,7 @@ namespace DearlerPlatform.Service.ShoppingCartApp.DTO;
 
 public class ShoppingCartSelectedEditDTO
 {
-    public List<string> CartGuids { get; set; }
+    public string CartGuid { get; set; }
     public bool CartSelected { get; set; }
+    public int ProductNum { get; set; }
 }

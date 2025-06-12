@@ -19,6 +19,22 @@ public partial class RedisWorker
         await _redis.Db.HashSetAsync(key, entries);
     }
 
+    public async Task SetHashMemoryAsync<T>(string key, T data)
+    {
+        var props = typeof(T).GetProperties();
+        var entries = new List<HashEntry>();
+        foreach (var prop in props)
+        {
+            if (!prop.CanRead) continue;
+            var value = prop.GetValue(data);
+            if (value != null)
+            {
+                entries.Add(new HashEntry(prop.Name, value.ToString()));
+            }
+        }
+        await _redis.Db.HashSetAsync(key, entries.ToArray());
+    }
+
     public async Task<Dictionary<string, string>> GetHashValueAsync(string key, string valuekey)
     {
         var value = await _redis.Db.HashGetAsync(key, valuekey);
