@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "rkw00muWTEQRrxEectNEgonH3fdj1ujAMsJCLCAPlRA=",
+  "Source": "DearlerPlatform.Api",
+  "BasePath": "_content/DearlerPlatform.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,17 @@
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Extensions.deps.json
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Extensions.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Extensions.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.csproj.AssemblyReference.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.AssemblyInfoInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.AssemblyInfo.cs
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\refint\DearlerPlatform.Extensions.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerPlatform.Extensions.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\ref\DearlerPlatform.Extensions.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Core.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Core.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\bin\Debug\net9.0\DearlerPlatform.Domain.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Extensions\obj\Debug\net9.0\DearlerP.CBA3366F.Up2Date

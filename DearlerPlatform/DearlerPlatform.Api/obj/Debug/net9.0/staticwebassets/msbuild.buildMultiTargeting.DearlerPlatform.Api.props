@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DearlerPlatform.Api.props" />
+</Project>

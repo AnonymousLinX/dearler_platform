@@ -1,0 +1,17 @@
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Core.deps.json
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Core.runtimeconfig.json
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Core.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Core.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\bin\Debug\net9.0\DearlerPlatform.Domain.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.csproj.AssemblyReference.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.AssemblyInfoInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.AssemblyInfo.cs
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerP.43097941.Up2Date
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\refint\DearlerPlatform.Core.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\DearlerPlatform.Core.genruntimeconfig.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Core\obj\Debug\net9.0\ref\DearlerPlatform.Core.dll

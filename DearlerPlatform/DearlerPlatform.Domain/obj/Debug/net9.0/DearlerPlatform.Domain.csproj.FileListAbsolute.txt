@@ -1,0 +1,11 @@
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\bin\Debug\net9.0\DearlerPlatform.Domain.deps.json
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\bin\Debug\net9.0\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\bin\Debug\net9.0\DearlerPlatform.Domain.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.AssemblyInfoInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.AssemblyInfo.cs
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\refint\DearlerPlatform.Domain.dll
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\DearlerPlatform.Domain.pdb
+C:\Users\Lin_4\MyDotnet\dearler_platform\DearlerPlatform\DearlerPlatform.Domain\obj\Debug\net9.0\ref\DearlerPlatform.Domain.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DearlerPlatform.Api.props" />
+</Project>

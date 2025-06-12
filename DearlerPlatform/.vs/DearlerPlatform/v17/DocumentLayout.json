@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lin_4\\MyDotnet\\dearler_platform\\DearlerPlatform\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{72002352-DD1A-4157-AB54-9EBE27B1155A}|DearlerPlatform.Common\\DearlerPlatform.Common.csproj|c:\\users\\lin_4\\mydotnet\\dearler_platform\\dearlerplatform\\dearlerplatform.common\\dearlerplatform.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{72002352-DD1A-4157-AB54-9EBE27B1155A}|DearlerPlatform.Common\\DearlerPlatform.Common.csproj|solutionrelative:dearlerplatform.common\\dearlerplatform.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DearlerPlatform.Common.csproj",
+              "DocumentMoniker": "C:\\Users\\Lin_4\\MyDotnet\\dearler_platform\\DearlerPlatform\\DearlerPlatform.Common\\DearlerPlatform.Common.csproj",
+              "RelativeDocumentMoniker": "DearlerPlatform.Common\\DearlerPlatform.Common.csproj",
+              "ToolTip": "C:\\Users\\Lin_4\\MyDotnet\\dearler_platform\\DearlerPlatform\\DearlerPlatform.Common\\DearlerPlatform.Common.csproj",
+              "RelativeToolTip": "DearlerPlatform.Common\\DearlerPlatform.Common.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-15T06:19:45.034Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
