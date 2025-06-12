@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DearlerPlatform.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34d44209ac23f52b80258a53e1f96842accad593")]
 [assembly: System.Reflection.AssemblyProductAttribute("DearlerPlatform.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DearlerPlatform.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
