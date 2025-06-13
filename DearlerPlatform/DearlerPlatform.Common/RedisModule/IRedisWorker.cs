@@ -13,4 +13,6 @@ public interface IRedisWorker
     public Task<Dictionary<string, string>> GetHashValueAsync(string key, string valuekey);
     public Task SetHashListMemoryAsync<T>(string key, IEnumerable<T> entities, Func<T, IEnumerable<string>> valueKeys);
     public Task<List<T>> GetHashMemoryAsync<T>(IEnumerable<string> keys) where T : new();
+    public Task<T> GetHashMemoryAsync<T>(string key) where T : new();
+    public void RemoveKey(string key);
 }

@@ -40,7 +40,8 @@ public partial class ShoppingCartService : IShoppingCartService
         if (shoppingCartRepeat != null)
         {
             shoppingCartRepeat.ProductNum++;
-            shoppingCartres = await _cartRepo.UpdateAsync(shoppingCartRepeat);
+            await _redisWorker.SetHashMemoryAsync<ShoppingCart>($"ShoppingCart:{shoppingCartRepeat.CartGuid}:{input.CustomerNo}", shoppingCartRepeat);
+            return shoppingCartRepeat;
         }
         else
         {
@@ -48,9 +49,9 @@ public partial class ShoppingCartService : IShoppingCartService
             shoppingCart.CartGuid = Guid.NewGuid().ToString();
             shoppingCart.CartSelected = true;
             // shoppingCartres = await _cartRepo.InsertAsync(shoppingCart);
-            await _redisWorker.SetHashMemoryAsync(
+            await _redisWorker.SetHashMemoryAsync<ShoppingCart>(
                 $"ShoppingCart:{shoppingCart.CartGuid}:{shoppingCart.CustomerNo}",
-                RedisWorker.ObjectToStringDictionary<ShoppingCart>(shoppingCart)
+                shoppingCart
                 );
             return shoppingCart;
         }

@@ -30,4 +30,9 @@ public partial class RedisWorker : IRedisWorker
             p => p.GetValue(obj)?.ToString() ?? ""
         );
     }
+
+    public void RemoveKey(string key)
+    { 
+        _redis.Db.KeyDelete(key);
+    }
 }

@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using DearlerPlatform.Api.Filters;
+using DearlerPlatform.Common.RedisModule;
 using DearlerPlatform.Domain;
 using DearlerPlatform.Service.ShoppingCartApp;
 using DearlerPlatform.Service.ShoppingCartApp.DTO;
@@ -15,9 +16,14 @@ namespace DearlerPlatform.Api.Controllers;
 public class ShoppingCartController : BaseController
 {
     private readonly IShoppingCartService _shoppingCartService;
-    public ShoppingCartController(IShoppingCartService shoppingCartService)
+    private readonly IRedisWorker _redisWorker;
+    public ShoppingCartController(
+        IShoppingCartService shoppingCartService,
+        IRedisWorker redisWorker
+        )
     {
         _shoppingCartService = shoppingCartService;
+        _redisWorker = redisWorker;
     }
 
     [HttpPost]
@@ -43,10 +49,20 @@ public class ShoppingCartController : BaseController
 
     [HttpPost("CartSelected")]
     [CustomerAuthorizationFilter]
-    public async Task<bool> UpdateCartSelected(List<ShoppingCartSelectedEditDTO> edit)
+    public async Task<bool> UpdateCartSelected(List<ShoppingCartSelectedEditDTO> edits)
     {
         var customerNo = HttpContext.Items["CustomerNo"]?.ToString();
-        return await _shoppingCartService.UpdateCartSelected(edit, customerNo);
+        List<ShoppingCartSelectedEditDTO> newEdits = [];
+        foreach (var cart in edits)
+        {
+            if (cart.ProductNum <= 0)
+            {
+                _redisWorker.RemoveKey($"ShoppingCart:{cart.CartGuid}:{customerNo}");
+                continue;
+            }
+            newEdits.Add(cart);
+        }
+        return await _shoppingCartService.UpdateCartSelected(newEdits, customerNo);
     }
 
     [HttpGet("num")]

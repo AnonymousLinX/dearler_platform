@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using AutoMapper;
 using DearlerPlatform.Domain;
 using DearlerPlatform.Service.ProductApp.ProductDTOs;
@@ -15,5 +16,11 @@ public class DearlerPlatformProfile: Profile
         CreateMap<Product, ProductSaleAreaDiff>().ReverseMap();
         CreateMap<ShoppingCart, ShoppingCartInputDTO>().ReverseMap();
         CreateMap<ShoppingCart, ShoppingCartDTO>().ReverseMap();
+        CreateMap<ProductDTO, ProductCTO>()
+        .ForMember(dest => dest.ProductPhoto, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.ProductPhoto)))
+        .ForMember(dest => dest.ProductSale, opt => opt.MapFrom(src => JsonConvert.SerializeObject(src.ProductSale)));
+        CreateMap<ProductCTO, ProductDTO>()
+        .ForMember(dest => dest.ProductPhoto, opt => opt.MapFrom(src => JsonConvert.DeserializeObject(src.ProductPhoto)))
+        .ForMember(dest => dest.ProductSale, opt => opt.MapFrom(src => JsonConvert.DeserializeObject(src.ProductSale)));
     }
 }

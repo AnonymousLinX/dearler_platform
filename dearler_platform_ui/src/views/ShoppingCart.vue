@@ -76,8 +76,9 @@ export default {
         await updateCartSelect([shoppingCartEdit]);
       },
       onSubNum: async (cart) => {
-        if (cart.productNum > 1) {
+        if (cart.productNum >= 1) {
           cart.productNum--;
+          shoppingCartInfo.onGetShoppingCarts();
         }
         const shoppingCartEdit: ShoppingCartSelectedEditDTO = {
           cartGuid: cart.cartGuid,

@@ -91,31 +91,22 @@ public partial class RedisWorker
         return resList;
     }
 
-        public async Task<List<T>> GetHashMemoryAsync<T>(string key) where T : new()
+    public async Task<T> GetHashMemoryAsync<T>(string key) where T : new()
     {
-        List<T> resList = new();
         var props = typeof(T).GetProperties();
-        HashSet<RedisKey> relatedKeysList = new();
-        List<RedisKey> relatedKeys = await GetallKeysAsync(key);
-        relatedKeysList.UnionWith(relatedKeys);
-        foreach (var relatedKey in relatedKeysList)
+        var res = await _redis.Db.HashGetAllAsync(key);
+        if (res.Length == 0) return default;
+        T t = new();
+        foreach (var item in res)
         {
-
-            var res = await _redis.Db.HashGetAllAsync(relatedKey);
-            if (res.Length == 0) continue;
-            T t = new();
-            foreach (var item in res)
+            foreach (var prop in props)
             {
-                foreach (var prop in props)
+                if (prop.Name == item.Name)
                 {
-                    if (prop.Name == item.Name)
-                    {
-                        prop.SetValue(t, Convert.ChangeType(item.Value.ToString(), prop.PropertyType));
-                    }
+                    prop.SetValue(t, Convert.ChangeType(item.Value.ToString(), prop.PropertyType));
                 }
             }
-            resList.Add(t);
         }
-        return resList;
+        return t;
     }
 }

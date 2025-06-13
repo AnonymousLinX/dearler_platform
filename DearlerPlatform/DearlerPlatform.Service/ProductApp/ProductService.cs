@@ -10,6 +10,9 @@ using DearlerPlatform.Core.Core;
 using DearlerPlatform.Common.EventBusHelper;
 using DearlerPlatform.Service.ShoppingCartApp.DTO;
 using System.Threading.Tasks;
+using DearlerPlatform.Common.RedisModule;
+using StackExchange.Redis;
+using DearlerPlatform.Core.Consts;
 
 namespace DearlerPlatform.Service.ProductApp;
 
@@ -19,13 +22,16 @@ public partial class ProductService : IProductService
     private IRepository<ProductSale> ProductSaleRepo { get; set; }
     private IRepository<ProductPhoto> ProductPhotoRepo { get; set; }
     private IRepository<ProductSaleAreaDiff> ProductSaleAreaDiffRepo { get; set; }
-    private IMapper Mapper { get; set; }    public ProductService(
+    private readonly IRedisWorker _redisWorker;
+    private IMapper Mapper { get; set; }
+    public ProductService(
         IRepository<Product> productRepo,
         IRepository<ProductSale> productSaleRepo,
         IRepository<ProductPhoto> productPhotoRepo,
         IRepository<ProductSaleAreaDiff> productSaleAreaDiffRepo,
         IMapper mapper,
-        LocalEventBus<List<ShoppingCartDTO>> localEventBusShoppingCartDTO
+        LocalEventBus<List<ShoppingCartDTO>> localEventBusShoppingCartDTO,
+        IRedisWorker redisWorker
         )
     {
         ProductRepo = productRepo;
@@ -34,12 +40,14 @@ public partial class ProductService : IProductService
         ProductSaleAreaDiffRepo = productSaleAreaDiffRepo;
         Mapper = mapper;
         localEventBusShoppingCartDTO.Subscribe(LocalEventHandler);
+        _redisWorker = redisWorker;
     }
 
     public async Task LocalEventHandler(List<ShoppingCartDTO> dtos)
     {
         var nos = dtos.Select(d => d.ProductNo).ToList();
-        var productDtos = await GetProductByProductNos(nos.ToArray());
+        // var productDtos = await GetProductByProductNos(nos.ToArray());
+        var productDtos = await GetProductByProductNosInCache(nos.ToArray());
         var productDtoMap = productDtos.ToDictionary(p => p.ProductNo);
         dtos.ForEach(dto =>
         {
@@ -154,5 +162,31 @@ public partial class ProductService : IProductService
             p.ProductSale = ProductSales.FirstOrDefault(m => m.ProductNo == p.ProductNo);
         });
         return productDtos;
+    }
+
+    public async Task<List<ProductDTO>> GetProductByProductNosInCache(params string[] postProductNos)
+    {
+        List<ProductCTO> ctos = [];
+        foreach (var productNo in postProductNos)
+        {
+            var res = await _redisWorker.GetHashMemoryAsync<ProductCTO>($"{RedisKeyName.PROUDCT_KEY}:{productNo}");
+            if (res == null)
+            {
+                List<ProductDTO> dbRes = await GetProductByProductNos(productNo);
+                var Product = dbRes.FirstOrDefault();
+                if (Product != null)
+                {
+                    var cto = Mapper.Map<ProductDTO, ProductCTO>(Product);
+                    await _redisWorker.SetHashMemoryAsync<ProductCTO>($"{RedisKeyName.PROUDCT_KEY}:{productNo}", cto);
+                    ctos.Add(cto);
+                }
+            }
+            else
+            { 
+                ctos.Add(res);
+            }
+
+        }
+        return Mapper.Map<List<ProductCTO>, List<ProductDTO>>(ctos);
     }
 }
